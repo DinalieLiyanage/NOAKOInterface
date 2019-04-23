@@ -1,0 +1,119 @@
+<div class="container" fxLayout="row" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+  <div class="background">
+    <div class="formBack">
+
+      <form class="form">
+        <div class="preview">
+          <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
+            [resizeToWidth]="200" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+            (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+        </div>
+        <mat-accordion>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Upload
+              </mat-panel-title>
+              <mat-panel-description>
+                Tell who you are
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <mat-form-field>
+              <input matInput #message maxlength="256" type="text" placeholder="Enter the name of the person"
+                id="folderName" name="folderName" [(ngModel)]="folderName" required>
+            </mat-form-field>
+            <label>Upload your image :</label>
+            <input type="file" (change)="fileChangeEvent($event)" />
+
+
+          </mat-expansion-panel>
+
+
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!-- <div class="preview">
+          <image-cropper [imageChangedEvent]="imageChangedEvent"
+          [maintainAspectRatio]="true" [aspectRatio]="1/1" [resizeToWidth]="200"
+          format="png" (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+          (loadImageFailed)="loadImageFailed()"></image-cropper>
+      </div>
+
+      <div class="buttons">
+          <label>Enter the person name here :</label>
+
+          <mat-form-field class="example-full-width">
+              <input matInput #message maxlength="256" type="text" id="folderName" name="folderName" [(ngModel)]="folderName" required >
+
+            </mat-form-field>
+      </div> -->
+
+      </form>
+
+
+
+      <!-- <table>
+
+      <tr>
+
+        <td>
+            <div class="example-button-row">
+
+                <button mat-raised-button color="primary" (click)="capture()">Capture Image</button>
+
+              </div>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td>
+            <div class="example-button-row">
+              <label>Enter the folder name here :</label>
+              <input type="text" id="folderName" name="folderName" [(ngModel)]="folderName" required>
+
+
+
+              </div>
+        </td>
+      </tr>
+      <tr class="preview">
+        <td>
+            <input type="file" (change)="fileChangeEvent($event)" />
+            <image-cropper [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true" [aspectRatio]="1/1" [resizeToWidth]="200"
+            format="png" (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+            (loadImageFailed)="loadImageFailed()"></image-cropper>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td>
+            <div class="example-button-row">
+
+                <button mat-raised-button color="primary" (click)="save()">Save Image</button>
+
+              </div>
+        </td>
+      </tr>
+    </table> -->
+
+    </div>
+  </div>
+
+</div>
