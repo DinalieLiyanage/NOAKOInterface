@@ -24,10 +24,14 @@ mat-form-field {
   border-bottom-style: outset;
   border-top-style: outset;
   position: relative;
+  object-fit: cover
 
   image-cropper {
-    position: absolute;
-    width: 100%;
+    margin: 0;
+    padding: 0
+    // position: relative;
+    // width: 100%;
+    // object-fit: cover
   }
 
   // display: block;

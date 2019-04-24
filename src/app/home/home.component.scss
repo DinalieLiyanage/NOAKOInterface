@@ -1,5 +1,97 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+iframe{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  padding: 0px;
+}
+
+
+.logo{
+ // position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  z-index: 8000;
+  position: absolute;
+  // text-align: center;
+  // vertical-align: middle;
+}
+
+//@import "bourbon";
+
+$col-secondary: #806868;
+
+
+.A{
+  
+  position: absolute;
+  float: left;
+ // font-size: 260px;
+  top: -10px;
+}
+
+.rest{
+  
+  //margin-left: 10px;
+  position: absolute;
+  float: left;
+  top: 25px;
+}
+
+
+.logo {
+
+  margin-top: 10px;
+  //margin-left: 30px;
+text-align: center;
+
+
+a {
+      
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 105px;
+      font-weight: 700;
+      font-family: 'Exo 2';
+      line-height: 0.8;
+
+  color: lighten($col-secondary, 10%);
+
+  text-shadow: 0 -1px 15px rgba(0,0,0,0.9),
+          
+      0 1px 0 adjust-hue(darken($col-secondary, 22%), -3deg),
+0 3px 0 adjust-hue(darken($col-secondary, 21%), -3deg),
+0 5px 0 adjust-hue(darken($col-secondary, 20%), -3deg),
+0 7px 0 adjust-hue(darken($col-secondary, 19%), -3deg),
+0 9px 0 adjust-hue(darken($col-secondary, 18%), -3deg),
+0 6px 50px transparentize(lighten($col-secondary, 20%), 0.2);
+
+  &:first-line {
+  
+      font-size: 0.8em;
+  
+  }
+
+  &:hover {
+      // @include transform(perspective(8em) rotateX(11deg) scale(1.2));
+
+      text-shadow: 0 -1px 15px black,
+          
+          0 1px 0 adjust-hue(darken($col-secondary, 22%), -3deg),
+  0 2px 0 adjust-hue(darken($col-secondary, 21%), -3deg),
+  0 0px 0 adjust-hue(darken($col-secondary, 20%), -3deg),
+  0 1px 0 adjust-hue(darken($col-secondary, 19%), -3deg),
+  0 2px 0 adjust-hue(darken($col-secondary, 18%), -3deg),
+  0 2px 30px transparentize(lighten($col-secondary, 20%), 0.4);
+  
+      }
+}
+}
 .column {
   float: left;
   width: 49%;
@@ -19,4 +111,161 @@
   .column {
     width: 100%;
   }
+
+  .logo{
+    // position: absolute;
+     top: 50%;
+     left: 10%;
+     transform: translateX(-50%) translateY(-50%);
+      //font-size: 60px;
+     z-index: 8000;
+     position: absolute;
+     // text-align: center;
+     // vertical-align: middle;
+   }
+   
+   a {
+      
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 65px;
+    font-weight: 700;
+    font-family: 'Exo 2';
+    line-height: 0.8;}
+
+   
 }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  background: white;
+  height: 5%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 90%;
+}
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Image Accordions General
+.container-general {
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 800px;
+  .gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+    .item {
+      flex: 1;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: none;
+      transition: all 0.8s ease;
+      &:hover {
+        flex: 7;
+      }
+    }
+  }
+}
+
+// Image Accordions Effect 1
+.wrap-effect-1 {
+  .item {
+    &:first-of-type {
+      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4185141/galshir-cactus-coffee.png');
+    }
+    &:nth-of-type(2) {
+      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/6146136/galshir-tea-biscuit_2x.png');
+    }
+    &:nth-of-type(3) {
+      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4473482/galshir-dog-walker.gif');
+    }
+    &:nth-of-type(4) {
+      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/5743606/gal-shir-scooter_2x.png');
+    }
+    &:last-of-type {
+      background-image: url('https://cdn.dribbble.com/users/729829/screenshots/4738104/galshir-storytime.png');
+    }
+  }
+}
+
+
+.inspire {
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  text-decoration:none;
+  margin: 10px;
+  padding: 10px;
+  &:after {
+    background: #38ef7d;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .4;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
+  &:hover {
+    &:after {
+      left: 120%;
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(10deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-10deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(5deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0)
+  }
+}
+
+
+

@@ -6,7 +6,7 @@
       <form class="form">
         <div class="preview">
           <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
-            [resizeToWidth]="200" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+            [resizeToWidth]="200n " format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
             (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
         </div>
         <mat-accordion>
