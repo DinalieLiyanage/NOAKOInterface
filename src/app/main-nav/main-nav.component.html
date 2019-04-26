@@ -3,20 +3,20 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'over'">
 
 
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>NOAKO Options</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="vrMode">VR Mode</a>
-      <a mat-list-item routerLink="/controller">Handle Images</a>
+      <a mat-list-item (click)="move()">VR Mode</a>
+      <a mat-list-item routerLink="controller">Handle Images</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" *ngIf='isEqual' >
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>
-        <h1 class="app-name">NOAKO<br><small> your capturing companion</small></h1>
+        <h1 class="app-name">NOAKO</h1>
       </span>
     </mat-toolbar>
     <!-- Add Content Here -->

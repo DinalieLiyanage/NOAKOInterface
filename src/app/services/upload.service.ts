@@ -12,7 +12,7 @@ type EntityResponseType = HttpResponse<IUploadImage>;
 @Injectable({ providedIn: 'root' })
 export class UploadService {
 
-    private resourceUrl = ' '  + 'api/user';
+    private resourceUrl = '/api/send';
     private resourceSearchUrl = ' ' + '/api/user/_search/';
 
     constructor(private http: HttpClient) { }

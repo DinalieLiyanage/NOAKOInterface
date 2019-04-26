@@ -4,6 +4,7 @@ import { UploadImage, IUploadImage } from '../Models/UploadImage';
 import { UploadService } from '../services/upload.service';
 import { Observable } from 'rxjs';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { JAN } from '@angular/material';
 
 @Component({
   selector: 'app-controller',
@@ -38,7 +39,20 @@ export class ControllerComponent implements OnInit {
     console.log('In upload');
 
     console.log(this.uploadImageDetails);
+    this.uploadService.create(this.uploadImageDetails).subscribe(
+      res => {
+        alert('RES :' + JSON.stringify(res));
+      }
+      , err => {
+        alert('ERR :' + JSON.stringify(err));
 
+      },
+      () => {
+
+        // tslint:disable-next-line:quotemark
+        alert("done");
+      }
+    );
     // this.subscribeToSaveResponse(this.uploadService.create(this.uploadImageDetails));
   }
 
