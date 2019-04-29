@@ -1,7 +1,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .description {
-  background-color: rgba(4, 19, 19, 0.432);
+  //background-color: rgba(4, 19, 19, 0.432);
   position: absolute;
   z-index: 8000;
   // background-color: azure
@@ -13,7 +13,7 @@
 }
 
 .content1 {
-  width: 250px;
+  width: 230px;
   margin: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -85,7 +85,7 @@
 }
 
 .content3 {
-  width: 250px;
+  width: 230px;
   margin: 5px;
   margin-top: 10px;
   margin-bottom: 10px;

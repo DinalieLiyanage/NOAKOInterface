@@ -36,8 +36,16 @@
             </mat-form-field>
             <label>Upload your image :</label>
             <input type="file" (change)="fileChangeEvent($event)" />
+<<<<<<< HEAD
+            <button (click)=" goFullscreen()"> Fullscreen</button>
+            <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+=======
 
             <button class="uploadButton" mat-raised-button color="primary" (click)="upload()">Upload</button>
+<<<<<<< HEAD
+=======
+>>>>>>> 6a4176dbd07afd173d5830e4f10d54f4833cb211
+>>>>>>> b45cdf336fa8d4f47b6b1298b1f8e18c4f3fab09
           </mat-expansion-panel>
 
 
@@ -47,7 +55,9 @@
                 Take selfie
               </mat-panel-title>
               <mat-panel-description>
+
                 Save instantly
+
               </mat-panel-description>
             </mat-expansion-panel-header>
            <!-- Content -->
@@ -58,7 +68,7 @@
 
           <button  mat-raised-button color="primary" class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
           <div class="snapshot" *ngIf="webcamImage">
-           
+
             <img [src]="webcamImage.imageAsDataUrl"/>
           </div>
           </mat-expansion-panel>

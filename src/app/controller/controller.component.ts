@@ -7,6 +7,9 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { JAN } from '@angular/material';
 import { WebcamUtil, WebcamInitError, WebcamImage } from 'ngx-webcam';
 
+
+declare var fullScreen: any;
+
 @Component({
   selector: 'app-controller',
   templateUrl: './controller.component.html',
@@ -32,14 +35,14 @@ export class ControllerComponent implements OnInit {
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
   /*Web camera******************* up variables****/
-  panelOpenState: boolean;
+  
   imageChangedEvent: any = '';
   croppedImage: any = '';
   fileUploader: any;
   isSaving: boolean;
   folderName: string;
   uploadImageDetails: IUploadImage;
-
+  panelOpenState = false;
   // tslint:disable-next-line:variable-name
   public _uploadImageDetails: IUploadImage;
   constructor(
@@ -48,12 +51,13 @@ export class ControllerComponent implements OnInit {
 
   ngOnInit() {
     this.uploadImageDetails = new UploadImage();
+    fullScreen();
 
     /*Web camera****/
     WebcamUtil.getAvailableVideoInputs()
-    .then((mediaDevices: MediaDeviceInfo[]) => {
-      this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
-    });
+      .then((mediaDevices: MediaDeviceInfo[]) => {
+        this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+      });
   }
 
   capture() {
@@ -134,9 +138,12 @@ export class ControllerComponent implements OnInit {
     alert(JSON.stringify(res));
   }
 
+  goFullscreen() {
+    fullScreen();
+  }
   /*Web camera ****************************************/
 
-  
+
   public triggerSnapshot(): void {
     this.trigger.next();
   }
@@ -149,7 +156,7 @@ export class ControllerComponent implements OnInit {
     this.errors.push(error);
   }
 
-  public showNextWebcam(directionOrDeviceId: boolean|string): void {
+  public showNextWebcam(directionOrDeviceId: boolean | string): void {
     // true => move forward through devices
     // false => move backwards through devices
     // string => move to device with given deviceId
@@ -157,6 +164,7 @@ export class ControllerComponent implements OnInit {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
+    // tslint:disable-next-line:no-console
     console.info('received webcam image', webcamImage);
     this.webcamImage = webcamImage;
   }
@@ -170,7 +178,7 @@ export class ControllerComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
-  public get nextWebcamObservable(): Observable<boolean|string> {
+  public get nextWebcamObservable(): Observable<boolean | string> {
     return this.nextWebcam.asObservable();
   }
 

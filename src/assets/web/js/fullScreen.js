@@ -1,15 +1,20 @@
-// if (!Element.prototype.requestFullscreen) {
-// 	Element.prototype.requestFullscreen = Element.prototype.mozRequestFullscreen || Element.prototype.webkitRequestFullscreen || Element.prototype.msRequestFullscreen;
-// }
+/**
+ * Element.requestFullScreen() polyfill
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
+if (!Element.prototype.requestFullscreen) {
+	Element.prototype.requestFullscreen = Element.prototype.mozRequestFullscreen || Element.prototype.webkitRequestFullscreen || Element.prototype.msRequestFullscreen;
+}
 
 /**
  * document.exitFullScreen() polyfill
  * @author Chris Ferdinandi
  * @license MIT
  */
-// if (!document.exitFullscreen) {
-// 	document.exitFullscreen = document.mozExitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
-// }
+if (!document.exitFullscreen) {
+	document.exitFullscreen = document.mozExitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+}
 
 /**
  * document.fullscreenElement polyfill
@@ -32,14 +37,15 @@ if (!document.fullscreenElement) {
 	});
 }
 
-function goFullScreen(){
-  alert("In full screen");
+function fullScreen() {
+
+
 	// If there's an element in fullscreen, exit
 	// Otherwise, enter it
-	// if (document.fullscreenElement) {
-	// 	document.exitFullscreen();
-	// } else {
-	// 	document.documentElement.requestFullscreen();
-	// }
+	if (document.fullscreenElement) {
+		document.exitFullscreen();
+	} else {
+		document.documentElement.requestFullscreen();
+	}
 
-}
+} 
