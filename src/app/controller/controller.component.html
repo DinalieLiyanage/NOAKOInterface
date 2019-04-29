@@ -5,16 +5,17 @@
 
       <form class="form">
         <div class="preview">
-          <div class="imageCropper">
+          <div class="imageCropper"  *ngIf="!panelOpenState">
             <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
-              [resizeToWidth]="200 " format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+              [resizeToWidth]="200" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
               (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
           </div>
+
           <div class="webCamera" *ngIf="panelOpenState">
-            <!-- <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+            <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
               *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
               [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
-              (initError)="handleInitError($event)"></webcam> -->
+              (initError)="handleInitError($event)"  ></webcam>
           </div>
         </div>
         <mat-accordion>
@@ -35,21 +36,40 @@
             </mat-form-field>
             <label>Upload your image :</label>
             <input type="file" (change)="fileChangeEvent($event)" />
+<<<<<<< HEAD
             <button (click)=" goFullscreen()"> Fullscreen</button>
             <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+=======
+
+            <button class="uploadButton" mat-raised-button color="primary" (click)="upload()">Upload</button>
+>>>>>>> 6a4176dbd07afd173d5830e4f10d54f4833cb211
           </mat-expansion-panel>
 
 
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Self aware panel
+                Take selfie
               </mat-panel-title>
               <mat-panel-description>
+<<<<<<< HEAD
                 Currently I am {{panelOpenState ? 'open' : 'closed'}} <h1>{{panelOpenState}}</h1>
+=======
+                Save instantly
+>>>>>>> 6a4176dbd07afd173d5830e4f10d54f4833cb211
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+           <!-- Content -->
+           <mat-form-field>
+            <input matInput #message maxlength="256" type="text" placeholder="Enter the name of the person"
+              id="folderName" name="folderName" [(ngModel)]="uploadImageDetails.folderName" required>
+          </mat-form-field>
+
+          <button  mat-raised-button color="primary" class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+          <div class="snapshot" *ngIf="webcamImage">
+
+            <img [src]="webcamImage.imageAsDataUrl"/>
+          </div>
           </mat-expansion-panel>
         </mat-accordion>
         <!-- <div class="preview">

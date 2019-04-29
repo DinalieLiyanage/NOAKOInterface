@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MaterialCDKModule } from '../_material/cdk/material.cdk.module';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { WebcamModule } from 'ngx-webcam';
 
 const routes = [
   {
@@ -23,7 +24,8 @@ const routes = [
     RouterModule.forChild(routes),
     MaterialCDKModule,
     FormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    WebcamModule
   ]
 })
 export class ControllerModule { }
