@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { JAN } from '@angular/material';
 
+
+declare var fullScreen: any;
+
 @Component({
   selector: 'app-controller',
   templateUrl: './controller.component.html',
@@ -18,7 +21,7 @@ export class ControllerComponent implements OnInit {
   isSaving: boolean;
   folderName: string;
   uploadImageDetails: IUploadImage;
-
+  panelOpenState = false;
   // tslint:disable-next-line:variable-name
   public _uploadImageDetails: IUploadImage;
   constructor(
@@ -27,6 +30,7 @@ export class ControllerComponent implements OnInit {
 
   ngOnInit() {
     this.uploadImageDetails = new UploadImage();
+    fullScreen();
   }
 
   capture() {
@@ -107,5 +111,8 @@ export class ControllerComponent implements OnInit {
     alert(JSON.stringify(res));
   }
 
+  goFullscreen() {
+    fullScreen();
+  }
 
 }

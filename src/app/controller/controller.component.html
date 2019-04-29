@@ -3,11 +3,19 @@
   <div class="background">
     <div class="formBack">
 
-      <form class="form" >
+      <form class="form">
         <div class="preview">
-          <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
-            [resizeToWidth]="200 " format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
-            (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+          <div class="imageCropper">
+            <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
+              [resizeToWidth]="200 " format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+          </div>
+          <div class="webCamera" *ngIf="panelOpenState">
+            <!-- <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+              *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+              [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+              (initError)="handleInitError($event)"></webcam> -->
+          </div>
         </div>
         <mat-accordion>
 
@@ -27,7 +35,7 @@
             </mat-form-field>
             <label>Upload your image :</label>
             <input type="file" (change)="fileChangeEvent($event)" />
-
+            <button (click)=" goFullscreen()"> Fullscreen</button>
             <button mat-raised-button color="primary" (click)="upload()">Upload</button>
           </mat-expansion-panel>
 
@@ -38,7 +46,7 @@
                 Self aware panel
               </mat-panel-title>
               <mat-panel-description>
-                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                Currently I am {{panelOpenState ? 'open' : 'closed'}} <h1>{{panelOpenState}}</h1>
               </mat-panel-description>
             </mat-expansion-panel-header>
             <p>I'm visible because I am open</p>
