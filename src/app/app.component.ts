@@ -2,7 +2,7 @@ import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 
-declare var goFullScreen: any;
+//declare var goFullScreen: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
     //   console.log(urlRes)
     // });
 
-    goFullScreen();
+    // goFullScreen();
 
     this.router.events.subscribe(path => {
       console.log('path = ', path);
