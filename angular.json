@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/NOAKO",
+            "outputPath": "../NOAKOApplication/www",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-             
+              "src/assets/web/js/fullScreen.js"
             ],
             "es5BrowserSupport": true
           },

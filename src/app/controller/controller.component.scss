@@ -1,7 +1,10 @@
 .container {
   padding-left: 10px;
   padding-right: 10px;
+ 
 }
+
+
 
 div.background {
   //background-color: rgba(168, 127, 184, 0.342);
@@ -11,11 +14,25 @@ div.background {
 
 }
 
+.snapshot {
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
+  //display: inline
+}
+
+.snapshot img{
+  width: 320px;
+  height: 240px;
+}
+
 mat-form-field {
   width: 100%
 }
 
 .preview {
+  // min-width: 640px !important;
+  // min-height: 360px !important;
   width: 100%;
   height: 400px;
   background-color: rgba(0, 0, 0, 0.267);
@@ -24,14 +41,35 @@ mat-form-field {
   border-bottom-style: outset;
   border-top-style: outset;
   position: relative;
+  object-fit: cover;
+  overflow: hidden;
+
+  display: block;
+ // position: relative;
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
 
   image-cropper {
-    position: absolute;
+    // min-width: 640px !important;
+    // min-height: 360px !important;
+    margin: 0;
+    //margin-top: 20px;;
+    padding: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover
+    // position: relative;
+    // width: 100%;
+    // object-fit: cover
   }
 
   // display: block;
 
+}
+
+.uploadButton{
+  margin-top: 6px;
 }
 
 
@@ -47,9 +85,9 @@ mat-form-field {
 
 
 
-// @media screen and (max-width: 500px) {
-//   .preview {
-//     width: 100%;
-//     height: 300px;
-//   }
-// }
+@media screen and (max-width: 500px) {
+  .preview {
+    width: 100%;
+    height: 300px;
+  }
+}

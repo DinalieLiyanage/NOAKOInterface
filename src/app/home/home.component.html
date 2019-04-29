@@ -1,47 +1,52 @@
-<!-- <mdb-carousel [isControls]="true" class="carousel slide" [animation]="'slide'">
-    <mdb-carousel-item>
-      <div class="view">
-        <video class="video-fluid" autoplay loop>
-          <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4" />
-        </video>
-        <div class="mask rgba-indigo-light waves-light" mdbWavesEffect></div>
-      </div>
-
-      <div class="carousel-caption">
-        <div class="animated fadeInDown">
-          <h3 class="h3-responsive">Light mask</h3>
-          <p>First text</p>
+<!-- <div class="heading">NOAKO</div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="container-general">
+        <div class="gallery-wrap wrap-effect-1">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
         </div>
       </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view">
-        <video class="video-fluid" autoplay loop>
-          <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4" />
-        </video>
-        <div class="mask rgba-purple-slight waves-light" mdbWavesEffect></div>
-      </div>
+    </div>
 
-      <div class="carousel-caption">
-        <div class="animated fadeInDown">
-          <h3 class="h3-responsive">Super light mask</h3>
-          <p>Secondary text</p>
-        </div>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view">
-        <video class="video-fluid" autoplay loop>
-          <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-        </video>
-        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-      </div>
 
-      <div class="carousel-caption">
-        <div class="animated fadeInDown">
-          <h3 class="h3-responsive">Strong mask</h3>
-          <p>Third text</p>
-        </div>
-      </div>
-    </mdb-carousel-item>
-  </mdb-carousel> -->
+
+
+  </div>
+</div>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    direction: 'vertical',
+    mousewheel: {},
+    effect: 'cube',
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false
+    }
+  });
+</script> -->
+<div class="logo">
+
+    <a><div class="rest">NOAKO</div></a>
+
+  </div>
+
+  <div class="description">
+    <div class="content1">Customized capturing angles</div>
+    <div class="content2">Provides VR mode</div>
+    <div class="content3">Customized capturing angles</div>
+    <div class="content4">Provides VR mode</div>
+  </div>
+
+<div class="backAnimation">
+
+  <iframe class="coloumn" style="border: none" src="assets/web/index2.html"></iframe>
+
+</div>
+
+<router-outlet></router-outlet>

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { VrModeComponent } from './vr-mode/vr-mode.component';
 import { CommonModule } from '@angular/common';
+import {WebcamModule} from 'ngx-webcam';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CommonModule } from '@angular/common';
     MaterialCDKModule,
     ImageCropperModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    WebcamModule
   ],
   providers: [UploadService],
   bootstrap: [AppComponent]
